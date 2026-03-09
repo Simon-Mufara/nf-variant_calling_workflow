@@ -1,0 +1,36 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%labels
+    Author Simon Mufara
+    Tool Trimmomatic
+
+%help
+    This container runs Trimmomatic for trimming raw FASTQ files.
+    Usage:
+        singularity run trimmomatic.sif <Trimmomatic options>
+
+%post
+    set -eux
+
+    # Update and install dependencies
+    apt-get update
+    apt-get install -y --no-install-recommends \
+        default-jre wget unzip
+
+    # Download Trimmomatic
+    wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip
+    unzip Trimmomatic-0.39.zip
+    mv Trimmomatic-0.39 /opt/trimmomatic
+    rm Trimmomatic-0.39.zip
+
+    # Clean up
+    apt-get clean
+    rm -rf /var/lib/apt/lists/*
+
+%environment
+    export TRIM="/opt/trimmomatic/trimmomatic-0.39.jar"
+
+%runscript
+    # Allows: singularity run trimmomatic.sif <options>
+    exec java -jar $TRIM "$@"

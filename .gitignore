@@ -1,0 +1,22 @@
+# Nextflow runtime
+.work/
+work/
+.nextflow*
+trace.txt
+timeline.html
+report.html
+
+# Generated results (we keep only the DB by default)
+results/fastqc/
+results/trimmomatic/
+results/bwa/
+results/bam/
+results/vcf/
+
+# Large binaries (do NOT commit .sif unless explicitly required)
+trimmomatic_user.sif
+
+# Python/OS noise
+__pycache__/
+.DS_Store
+Thumbs.db
