@@ -8,7 +8,7 @@ From: ubuntu:22.04
 %help
     This container runs Trimmomatic for trimming raw FASTQ files.
     Usage:
-        singularity run trimmomatic.sif <Trimmomatic options>
+        singularity run trimmomatic_user.sif <Trimmomatic options>
 
 %post
     set -eux
