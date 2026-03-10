@@ -1,4 +1,4 @@
-# Variant calling workflow (Nextflow DSL2 + Singularity)
+# Variant calling workflow (Nextflow DSL2 + Singularity + SQLite3)
 
 <p align="center">
   <img src="images/variant_calling_pipeline.png" width="100%">
