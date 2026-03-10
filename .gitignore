@@ -20,3 +20,8 @@ trimmomatic_user.sif
 __pycache__/
 .DS_Store
 Thumbs.db
+.work/
+data/
+*.sif
+*.pdf
+results/db/*.csv
