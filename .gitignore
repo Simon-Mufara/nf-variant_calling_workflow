@@ -6,14 +6,14 @@ trace.txt
 timeline.html
 report.html
 
-# Generated results (we keep only the DB by default)
+# Additional results 
 results/fastqc/
 results/trimmomatic/
 results/bwa/
 results/bam/
 results/vcf/
 
-# Large binaries (do NOT commit .sif unless explicitly required)
+
 trimmomatic_user.sif
 
 # Python/OS noise
@@ -24,4 +24,4 @@ Thumbs.db
 data/
 *.sif
 *.pdf
-results/db/*.csv
+
